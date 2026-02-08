@@ -1,0 +1,27 @@
+{
+  "name": "@siglo/siglo-pack",
+  "version": "1.0.0",
+  "description": "Shared TypeScript definitions and utilities for PrestaShop modules",
+  "main": "webpack-config.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "webpack-config.js"
+  ],
+  "dependencies": {
+    "assets-webpack-plugin": "^7.1.1",
+    "css-loader": "^7.1.2",
+    "esbuild-loader": "^4.4.1",
+    "mini-css-extract-plugin": "^2.9.4",
+    "postcss-loader": "^8.2.0",
+    "sass": "^1.97.2",
+    "sass-loader": "^16.0.6"
+  },
+  "peerDependencies": {
+    "webpack": "^5.0.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "keywords": ["prestashop", "typescript", "types"],
+  "author": "Siglo",
+  "license": "ISC"
+}
