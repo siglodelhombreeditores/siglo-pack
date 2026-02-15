@@ -14,12 +14,16 @@ declare global {
           post<T = any>(url: string, data?: { [k: string]: any } | FormData | string | null): Promise<T>;
           submitAsForm(action: string, method?: 'POST'|'GET'|'DELETE'): void;
         }
+        form: {
+          updateFormFields: {
+            init(): void;
+          }
+        }
       }
     };
   }
 
   class Loader {
-    prependTo(container: HTMLElement|string): this;
     appendTo(container: HTMLElement|string): this;
     show(): void;
     hide(): void;
@@ -27,6 +31,7 @@ declare global {
     build(): HTMLDivElement;
     execute<T>(task: () => Promise<T>): Promise<T>;
     new(): Loader;
+    isInserted(): boolean;
   }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "@siglo/siglo-pack",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Shared TypeScript definitions and utilities for PrestaShop modules",
   "main": "webpack-config.js",
   "types": "index.d.ts",
