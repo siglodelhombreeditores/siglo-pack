@@ -2,9 +2,13 @@ declare global {
   interface Window {
     siglo: {
       component: {
-        Loader: typeof Loader;
+        loader: Loader;
+
       }
       service: {
+        element: {
+          stringToNode(string: string): HTMLDivElement;
+        }
         fetch: {
           get<T = any>(url: string): Promise<T>;
           post<T = any>(url: string, data?: { [k: string]: any } | FormData | string | null): Promise<T>;
@@ -22,6 +26,7 @@ declare global {
     isShown(): boolean;
     build(): HTMLDivElement;
     execute<T>(task: () => Promise<T>): Promise<T>;
+    new(): Loader;
   }
 }
 
