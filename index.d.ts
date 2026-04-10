@@ -1,12 +1,15 @@
+/// <reference path="./prestashop.d.ts" />
+
 declare global {
   interface Window {
+    prestashop: PrestaShop;
     siglo: {
       component: {
         loader: Loader;
         typeahead: {
           load(): void;
         };
-      }
+      };
       service: {
         element: {
           stringToNode(string: string): HTMLDivElement;
@@ -17,12 +20,18 @@ declare global {
           submitAsForm(action: string, method?: 'POST'|'GET'|'DELETE'): void;
         }
         form: {
+          textToLinkRewrite(params: {
+            sourceSelector: string,
+            destinationSelector: string,
+            eventName?: string
+          }): void;
           updateFormFields: {
             init(): void;
-          }
+          };
         }
       }
     };
+    str2url(str: string): string;
   }
 
   class Loader {
@@ -35,6 +44,7 @@ declare global {
     new(): Loader;
     isInserted(): boolean;
   }
+  
 }
 
 export {};
