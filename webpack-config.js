@@ -36,6 +36,12 @@ class WebpackConfig {
     Object.assign(this.externals, externals);
     return this;
   }
+  addExternalJQuery() {
+    return this.addExternals({
+      $: '$',
+      jquery: 'jQuery'
+    })
+  }
 
   build() {
     return {

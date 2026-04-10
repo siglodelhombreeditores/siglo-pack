@@ -3,7 +3,9 @@ declare global {
     siglo: {
       component: {
         loader: Loader;
-
+        typeahead: {
+          load(): void;
+        };
       }
       service: {
         element: {
