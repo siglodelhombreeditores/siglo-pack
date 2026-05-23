@@ -1,6 +1,7 @@
 interface PrestaShop {
   component: {
     initComponents(components: PrestaShopComponent[]): void;
+    EventEmitter: EventEmitter;
     Grid: typeof Grid;
     GridExtensions: Record<GridExtensionName, GridExtensionConstructor>;
     TaggableField: typeof TaggableField;
@@ -8,11 +9,20 @@ interface PrestaShop {
 }
 
 type PrestaShopComponent =
-  | 'TinyMCEEditor'
-  | 'TranslatableInput'
+  | 'ChoiceTree'
   | 'TaggableField'
+  | 'TinyMCEEditor'
   | 'TranslatableField'
-  | 'ChoiceTree';
+  | 'TranslatableInput';
+
+type PrestaShopEvent = 
+  | 'PSComponentsInitiated'
+  | 'updateSubmitButtonState';
+
+declare class EventEmitter {
+  on(eventName: PrestaShopEvent, listener: (args?: any) => void): void;
+  emit(eventName: PrestaShopEvent): void;
+}
 
 declare class Grid {
   constructor(id: string);

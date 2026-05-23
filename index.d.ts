@@ -31,6 +31,7 @@ declare global {
         }
       }
     };
+    modalConfirmation: ModalConfirmation
     str2url(str: string): string;
   }
 
@@ -43,6 +44,12 @@ declare global {
     execute<T>(task: () => Promise<T>): Promise<T>;
     new(): Loader;
     isInserted(): boolean;
+  }
+
+  class ModalConfirmation {
+    create(content: null|string, title: null|string, callbacks?: {onContinue?: () =>void, onCancel?: () => void}): this;
+    show(): void;
+    hide(): void;
   }
   
 }
