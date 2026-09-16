@@ -1,12 +1,13 @@
 {
   "name": "@siglo/siglo-pack",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Shared TypeScript definitions and utilities for PrestaShop modules",
   "main": "webpack-config.js",
   "types": "index.d.ts",
   "files": [
     "index.d.ts",
-    "webpack-config.js"
+    "webpack-config.js",
+    "style-entries-cleaner.js"
   ],
   "peerDependencies": {
     "webpack": "^5.0.0",
