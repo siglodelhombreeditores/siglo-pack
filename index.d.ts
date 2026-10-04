@@ -5,6 +5,7 @@ declare global {
     prestashop: PrestaShop;
     siglo: {
       component: {
+        form(control: HTMLElement|null): Form|null;
         loader: Loader;
         typeahead: {
           load(): void;
@@ -35,6 +36,13 @@ declare global {
     str2url(str: string): string;
   }
 
+  class Form {
+    preventSubmit(block: boolean): void;
+    getSubmitButton(): HTMLButtonElement|HTMLInputElement|null;
+    disableSubmitButton();
+    enableSubmitButton();
+  }
+
   class Loader {
     appendTo(container: HTMLElement|string): this;
     show(): void;
@@ -51,7 +59,6 @@ declare global {
     show(): void;
     hide(): void;
   }
-  
 }
 
 export {};
